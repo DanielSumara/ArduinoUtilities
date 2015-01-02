@@ -26,3 +26,13 @@
 *.exe
 *.out
 *.app
+
+# Dictionaries
+Visual Micro
+
+# Visual Studio stuff
+*.sdf
+*.opensdf
+*.v12.suo
+*.vcxproj
+*.vcxproj.filters
