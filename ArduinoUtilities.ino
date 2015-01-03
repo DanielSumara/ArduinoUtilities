@@ -1,10 +1,11 @@
+#include "SwitchButton.h"
 #include "PushButton.h"
 
-PushButton button;
+SwitchButton button;
 
 void setup()
 {
-	button = PushButton(4, 20);
+	button = SwitchButton(4, 50);
 	pinMode(8, OUTPUT);
 }
 

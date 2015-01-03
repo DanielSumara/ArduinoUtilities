@@ -34,7 +34,12 @@ enum DebounceState
 	/// <summary>
 	/// The unstable
 	/// </summary>
-	Unstable
+	Unstable, 
+
+	/// <summary>
+	/// The changed
+	/// </summary>
+	Changed
 };
 
 /// <summary>

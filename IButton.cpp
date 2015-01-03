@@ -16,7 +16,10 @@ IButton::IButton(byte pinNo, byte debounceTimeInMiliseconds)
 
 	debounceTime = debounceTimeInMiliseconds;
 
-	lastReadedState = millis();
+	currentState = Released;
+	lastReadedState = LOW;
+	pushedTime = millis();
+	debounceState = Debounced;
 }
 
 /// <summary>
