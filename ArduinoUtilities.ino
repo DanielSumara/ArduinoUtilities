@@ -1,19 +1,22 @@
-#include "SwitchButton.h"
-#include "PushButton.h"
+#include <OneWire.h>
 
-SwitchButton button;
+#include "DS18B20.h"
+#include "ITemperatureSensor.h"
+#include "Arduino.h"
+
+DS18B20 *sensor;
+byte address[] = { 0x28, 0x4A, 0x68, 0x5D, 0x6, 0x0, 0x0, 0x1F };
 
 void setup()
 {
-	button = SwitchButton(4, 50);
-	pinMode(8, OUTPUT);
+	Serial.begin(9600);
+	while (!Serial)
+		;
+	
+	sensor = new DS18B20(address, 10);
 }
 
 void loop()
 {
-	button.UpdateState();
-	if (button.CurrentState() == Pushed)
-		digitalWrite(8, HIGH);
-	else
-		digitalWrite(8, LOW);
+	sensor->CurrentTemperature();
 }
